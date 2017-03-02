@@ -24,8 +24,8 @@
 					</div>
 					<span>登录</span>
 				</dt>
-				<dd class="active" ng-repeat="item in navs">
-					<a href="{{item.navs}}" class="{{item.icon}}">
+				<dd class="active" ng-repeat="item in navs" ng-click="toggle()">
+					<a href="{{item.link}}" class="{{item.icon}}">
 						<span>{{item.text}}</span>
 					</a>
 				</dd>
@@ -46,7 +46,7 @@
 				<a href="javascript:;" class="search icon-search"></a>
 			</div>
 			<!-- 主体 -->
-			<div ng-class="{body: true, collapse: collapsed}">
+			<div ng-class="{body: true, collapse: collapsed}" >
 				<!--  展示内容部分-->
 				<div ng-view></div>
 			</div>

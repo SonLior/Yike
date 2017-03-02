@@ -35,10 +35,19 @@ Yike.run(['$rootScope', function ($rootScope) {
 //配置路由
 Yike.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/today', {
-        templateUrl: './view/today.html',
-        controller: ''
+        templateUrl: './views/today.html'
+    }).when('/older', {
+        templateUrl: './views/older.html'
+    }).when('/author', {
+        templateUrl: './views/author.html'
+    }).when('/category',{
+        templateUrl: './views/category.html'
+    }).when('/like', {
+        templateUrl: './views/like.html'
+    }).when('/settings', {
+        templateUrl: './views/settings.html'
     });
-}])
+}]);
 
 
 Yike.controller('NavsCtrl', ['$scope', function ($scope) {
