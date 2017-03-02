@@ -35,7 +35,8 @@ Yike.run(['$rootScope', function ($rootScope) {
 //配置路由
 Yike.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/today', {
-        templateUrl: './views/today.html'
+        templateUrl: './views/today.html',
+        controller: 'TodayCtrl'
     }).when('/older', {
         templateUrl: './views/older.html'
     }).when('/author', {
@@ -60,4 +61,13 @@ Yike.controller('NavsCtrl', ['$scope', function ($scope) {
 		{text: '我的喜欢', icon: 'icon-heart', link: '#/like'},
 		{text: '设置', icon: 'icon-cog', link: '#/settings'}
 	];
+}]);
+
+Yike.controller('TodayCtrl', ['$scope', '$http', function ($scope, $http) {
+    $http({
+        url: './api/today.php'
+    }).success(function (info) {
+        $scope.data = info;
+        console.log(info);
+    })
 }]);
